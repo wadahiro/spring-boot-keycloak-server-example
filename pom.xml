@@ -234,6 +234,37 @@
                 </dependency>
             </dependencies>
         </profile>
+        <profile>
+            <id>thin</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <configuration>
+                            <excludeDevtools>true</excludeDevtools>
+                            <requiresUnpack>
+                                <dependency>
+                                    <groupId>org.keycloak</groupId>
+                                    <artifactId>keycloak-connections-jpa</artifactId>
+                                </dependency>
+                                <dependency>
+                                    <groupId>org.keycloak</groupId>
+                                    <artifactId>keycloak-model-jpa</artifactId>
+                                </dependency>
+                            </requiresUnpack>
+                        </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.springframework.boot.experimental</groupId>
+                                <artifactId>spring-boot-thin-layout</artifactId>
+                                <version>1.0.22.RELEASE</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 
 </project>
